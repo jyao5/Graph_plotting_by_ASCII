@@ -1,7 +1,7 @@
 1.Type and structure
   for bitmap matrix, using vector<vector<char>>
   (int) row# and column#
-  (double)utility
+  (int)utility counter: number of non space place
   vector<node> nodelist
   node{int node#, int row#, int column#}
   
@@ -11,6 +11,8 @@
       place each node in the median column, 7 rows away from each other
       push each node along with its coordinates(as in a struct"node") in a vector
       *note: struct node is of form: (int) node#; (int) rows; (int) columns
+      *note: limited by the width of the map, node number should not be more than two digits
+      
   2.2.draw directed lines with the arc set from Graph and node set store within
       In detail, for each node
         incoming arc from above, points to the top
@@ -23,20 +25,21 @@
   |       +------+
   |       |         
   |       V         
-  +------[1]------  
-          ^      |  1
-          |      |  2
-  + ------+      |  3
-  |              |  4
-  |       +------+  5
-  |       |         6
-  |       V         7
-  +------[2]-----+
-          ^      |
-          |      |
-          |      V
+  +------[01]-----+  
+          ^       |  1
+          |       |  2
+  + ------+       |  3
+  |               |  4
+  |       +-------+  5
+  |       |          6
+  |       V          7
+  +------[02]-----+
+          ^       |
+          |       |
+          |       V
   2.3.print out the bitmap onto the console
-  2.4.getter of the dimension and utility
+  2.4.getter of the dimension
+  2.5.utility computation(return a ratio of non-space area to all area, necessarily of type float or double)
   
 3. algorithm layout
   2.1. parameters: vector<int> nodelist
@@ -45,4 +48,18 @@
     for each node, assign to it a coordinate map[n*7][35]
     create a node class with node#, coordinates, and push into vector<node>
     add the node along with the bracket(suppose # of node less than 10)
-  2.2
+  2.2. parameters: vector<arc> arclist
+    Outer loop, obtain an arc from the list, and draw the line, get the next arc until the list is empty.
+    Some ideas:
+      1)the first time an arc is drawn to a node, draw the arrow part which is + or ^
+                                                                               |    |
+                                                                               V    +
+          Thus the job is to make all incoming lines join at the intersection '+'. Since all incoming arc bend at the same row,
+          outer arc can joint at the bend of the inner arc
+      2)the first time an arc is draw from a node, draw a line '-' from the node. And start from the next position, send 
+        vertical probe to check if there's an overlap(cross over is okay). If there isn't overlapping, draw the vertical part.
+        Then draw horizontally to the node.
+        Every time a probing failed, shift 3 places(----X---?--...) and do another probing
+      3)all weight are placed at the median of the vertical part of the arcs
+      4)each time a symbol is placed, increase the utility counter
+    Note:In this fashion, cross-over only occurs at the incoming horizontal part

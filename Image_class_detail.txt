@@ -1,0 +1,20 @@
+1.Type and structure
+  for bitmap matrix, using vector<vector<char>>
+  (int) row# and column#
+  (double)utility
+  
+2.behaviour
+  2.1.initialize the bitmap with node set from Graph.
+      assume the console is 70 characters wide.
+      place each node in the median column, 7 rows away from each other
+      push each node along with its coordinates(as in a struct"node") in a vector
+      *note: struct node is of form: (int) node#; (int) rows; (int) columns
+  2.2.draw directed lines with the arc set from Graph
+      arc pointing out from one node, stem from left and right side of a node
+      arc to one node, pointes to up and down side of the node
+      In detail, for one node
+        incoming arc from above, points to the top
+        incoming arc from down , pintes to the bottom
+        outgoing arc to above, sprouts from left
+        outgoing arc to below, sprouts from right
+        TBC

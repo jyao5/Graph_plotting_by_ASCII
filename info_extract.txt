@@ -1,0 +1,23 @@
+1.Conventional width of a console window is estimated as 60
+2.input file name "graph.dat""
+3.input format is node# [space] dst-node# [space] weight dst-node# [space] weight
+4.output two things: (1)ascii image of the graph (2)shortest path chart for each node to other nodes
+5.ascii image:
+  1)legend:
+  -			horizontal line
+  |			vertical line
+  +			intersection, 90 degrees bend
+  =			cross over
+  <>^V		arrows
+  []		node # in the bracket
+  naked#	weight
+  2)misc:
+  weight should be plugged where unambiguous
+  indegree + outdegree = 4 for all nodes
+6.chart:
+  for each node s, display shortest paths from it to all reachable node t
+
+7.Sample input from "graph.dat":
+1 2 10 3 5 4 100
+2 1 5
+4 3 50 2 10

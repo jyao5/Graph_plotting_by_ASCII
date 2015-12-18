@@ -1,0 +1,21 @@
+1.format and type
+	matrix in Graph is implemented with vector
+	declare: vector<vector<int>> vec;
+
+	(int) #of nodes; #of edges; #of  indegrees; #of outdegrees; 
+
+2.behaviour
+	2.0 getter of metadata
+	2.1 initialize matrix by graph.dat, set respective
+	2.2 provide a vector<int> of node number for Image's node plotting
+	2.3 provide a vector<arc> for Image's arc plotting
+	2.5 accessor(read-only) of matrix for Path for shortest path computation
+	2.6 print() the matrix for testing
+Note: arc is a struct containing: int fromNode#, int toNode#, int weight;
+
+3.algorithm layout
+	2.1 read each line, parse the line using stringstream, first number is row number
+		following pair is the column number along with the weight
+	2.2 traverse the matrix, build the vector by utility of algorithm find()
+	2.3 if an element is not zero, extract{row number = from, column number = to, weight}, construct arc
+		and push it into vector

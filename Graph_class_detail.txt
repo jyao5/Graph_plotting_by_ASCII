@@ -2,7 +2,7 @@
 	matrix in Graph is implemented with vector
 	declare: vector<vector<int>> vec;
 
-	(int) #of nodes; #of edges; #of  indegrees; #of outdegrees; 
+	(int) #of nodes; #of edges;
 
 2.behaviour
 	2.0 getter of metadata

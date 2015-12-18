@@ -1,0 +1,28 @@
+Overview
+A class "Graph" to read in graph.dat and store the graph
+A class "Image" to draw and store a matrix graph based on the "Graph"
+A class, "Path", of array of class "Graph", where each graph contains the minimal spanning tree of one node
+
+Structure:
+Graph:
+	a matrix to store the DAG
+	meta data:node quantity, edge quantity, max indegree, max outdegree
+Image:
+	a matrix to store matrix that can be readily mapped into the console
+	dimension of the matrix
+	utility(density) of the matrix
+Path;
+	an array of inherited graphs "indexed" by each node
+
+Interfaces:
+1. Graph should provide a list of nodes to initilize the dimension of the bitmap size in the Image
+2. Graph should provide a list of arcs(of a specific type) to Image to draw things on the bitmap
+3. Graph should be able to read a "graph.dat" file for initialization
+4. Original Graph should should be available to Path to compute list spanning Graph of each node
+5. Image should be able to print its content to the console
+6. Path should be able to print its "chart" to the console
+
+
+
+
+

@@ -5,7 +5,7 @@ A class, "Path", of array of class "Graph", where each graph contains the minima
 
 Structure:
 Graph:
-	a matrix to store the DAG
+	a matrix to store the DCG
 	meta data:node quantity, edge quantity, max indegree, max outdegree
 Image:
 	a matrix to store matrix that can be readily mapped into the console

@@ -1,0 +1,15 @@
+Structure:
+A two dimensionalcopy of the DCG, using vector, for manipulation.
+
+Input: Original Graph object and the node number i(not name) in interest.
+
+Algorithm:
+1. from the object get the matrix copy(m[][])
+2. search through the i(th) line for smallest weight arc([i][j])
+3. go through the line of the ending point of the arc(as above), i.e m[j][*], 
+   m[i][j] + m[j][*] is smaller and update m[i][*] line if 
+                                and also assign j as the previous node of * 
+4. mark j used
+5. repeat through 2-4 untill all cell in i(th) line are used
+6. go thru i(th) line, make a list of arc from all nodes with previous nodes
+7. draw picture by using function from Image.h

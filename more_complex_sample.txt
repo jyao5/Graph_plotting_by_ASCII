@@ -1,0 +1,24 @@
+from graph.dat
+a c 5 d 3 e 13
+b a 1 c 5 f 20
+c d 1 f 1
+d e 13
+e d 4
+f e 4
+
+matrix in Graph class should be like
+column #	-> from
+row #   	-> to
+	a	b	c	d	e	f
+a	-1	-1	5	3	13	-1	
+
+b	1	-1	5	-1	-1	20
+
+c	-1	-1	-1	1	-1	1
+
+d	-1	-1	-1	-1	4	-1
+
+e	-1	-1	-1	4	-1	-1
+
+f	-1	-1	-1	-1	4	-1
+
